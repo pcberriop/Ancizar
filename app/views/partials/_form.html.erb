@@ -1,0 +1,26 @@
+
+<%name ||= "Crear"%> 
+
+<h1> <%= name%> Articulo</h1>
+
+<%= form_for (@article) do |f| %>
+	<% @article.errors.full_messages.each do |menssage|%>
+		<div>
+			* <%= menssage%>
+		</div> 
+	<% end %>
+	
+	<div class="field"> 
+		<%= f.text_field :title , placeholder: "Titulo", class: "form-control" %>
+	</div>
+	<div class="field">
+		<%= f.text_area :body, placeholder: "Texto", class:"form-control" %>
+	</div>
+	<div class="field">
+		<%= f.text_area :body_t, placeholder: "Texto traducido", class:"form-control" %>
+	</div>
+	<div class="field">
+		<%= f.submit "guardar" %>
+	</div>
+
+<% end %> 

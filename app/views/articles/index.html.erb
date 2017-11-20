@@ -1,0 +1,16 @@
+<% @articles.each do |article| %>
+	<h1><%= article.title %> </h1>
+	<div>
+		<h4>Articulo</h2>
+		<%= article.body %> %>  
+	</div>
+	<div>
+		<h4>Traduccion</h2>
+		<%= article.body_t %> 
+	</div>
+	<div>
+ <%= link_to 'Show', article %> - <%= link_to 'Edit', edit_article_path(article) %> - <%= link_to "Eliminar", article, method: :delete %>  
+	</div>
+
+
+<% end %> 
